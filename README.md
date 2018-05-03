@@ -1,6 +1,5 @@
 ## Description
-A simple CRUD REST API.
-Using:
+A simple CRUD REST API using:
 - Play Framework for HTTP API
 - doobie for DB access
 - Flyway for DB migrations
@@ -45,6 +44,7 @@ Note: use integer value for the `age` field, since sbt-play-swagger plugin proce
 
 ## Failed validation response example
 Status: `Bad request`
+
 Payload:
 ```
 {
