@@ -1,11 +1,12 @@
 ## Description
-Simple CRUD controller with swagger-ui.
+A simple CRUD controller.
 Using:
 - Play Framework for HTTP API
 - doobie for DB access
 - Flyway for DB migrations
 - WIX Accord for validation
 - Pureconfig for configuration
+- sbt-play-swagger for swagger spec generation
 
 ## Prerequisites
 - Install postgres
