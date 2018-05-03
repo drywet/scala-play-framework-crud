@@ -6,7 +6,7 @@ Using:
 - Flyway for DB migrations
 - WIX Accord for validation
 - Pureconfig for configuration
-- sbt-play-swagger for swagger spec generation
+- sbt-play-swagger for swagger spec generation.
 
 ## Prerequisites
 - Install postgres
