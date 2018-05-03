@@ -3,8 +3,145 @@
 # https://www.playframework.com/documentation/latest/ScalaRouting
 # ~~~~
 
-# An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+# V1
 
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+###
+#  summary: list clients
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        type: array
+#        items:
+#          $ref: '#/definitions/clients.v1.ClientDto'
+###
+GET     /api/v1/client                           clients.v1.ClientController.getAll
+
+###
+#  summary: get a client
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/clients.v1.ClientDto'
+###
+GET     /api/v1/client/:id                       clients.v1.ClientController.get(id: Long)
+
+###
+#  summary: create a client
+#  parameters:
+#    - in: body
+#      name: client
+#      description: the client to create.
+#      schema:
+#        $ref: '#/definitions/clients.v1.ClientDataDto'
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/clients.v1.ClientDto'
+###
+POST    /api/v1/client                           clients.v1.ClientController.create()
+
+###
+#  summary: modify client info
+#  parameters:
+#    - in: body
+#      name: client
+#      description: the client info.
+#      schema:
+#        $ref: '#/definitions/clients.v1.ClientDataDto'
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/clients.v1.ClientDto'
+###
+PUT     /api/v1/client/:id                       clients.v1.ClientController.update(id: Long)
+
+###
+#  summary: remove a client
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/clients.v1.ClientDto'
+###
+DELETE  /api/v1/client/:id                       clients.v1.ClientController.delete(id: Long)
+
+
+# V2
+
+###
+#  summary: list clients
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        type: array
+#        items:
+#          $ref: '#/definitions/clients.v2.ClientDto'
+###
+GET     /api/v2/client                           clients.v2.ClientController.getAll
+
+###
+#  summary: get a client
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/clients.v2.ClientDto'
+###
+GET     /api/v2/client/:id                       clients.v2.ClientController.get(id: Long)
+
+###
+#  summary: create a client
+#  parameters:
+#    - in: body
+#      name: client
+#      description: the client to create.
+#      schema:
+#        $ref: '#/definitions/clients.v2.ClientDataDto'
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/clients.v2.ClientDto'
+###
+POST    /api/v2/client                           clients.v2.ClientController.create()
+
+###
+#  summary: modify client info
+#  parameters:
+#    - in: body
+#      name: client
+#      description: the client info.
+#      schema:
+#        $ref: '#/definitions/clients.v2.ClientDataDto'
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/clients.v2.ClientDto'
+###
+PUT     /api/v2/client/:id                       clients.v2.ClientController.update(id: Long)
+
+###
+#  summary: remove a client
+#  responses:
+#    200:
+#      description: success
+#      schema:
+#        $ref: '#/definitions/clients.v2.ClientDto'
+###
+DELETE  /api/v2/client/:id                       clients.v2.ClientController.delete(id: Long)
+
+
+# Static
+
+### NoDocs ###
+GET     /                                    controllers.Assets.versioned(path="/public", file: Asset = Asset("index.html"))
+### NoDocs ###
+GET     /swagger-ui/                         controllers.Assets.versioned(path="/public", file: Asset = Asset("swagger-ui/index.html"))
+### NoDocs ###
+GET     /*file                               controllers.Assets.versioned(path="/public", file: Asset)
