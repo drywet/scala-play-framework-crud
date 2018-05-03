@@ -1,3 +1,12 @@
+## Description
+Simple CRUD controller with swagger-ui.
+Using:
+- Play Framework for HTTP API
+- doobie for DB access
+- Flyway for DB migrations
+- WIX Accord for validation
+- Pureconfig for configuration
+
 ## Prerequisites
 - Install postgres
 - Install Flyway https://flywaydb.org/download/community , extract and add the directory to system PATH variable
