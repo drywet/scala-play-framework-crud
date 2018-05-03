@@ -17,7 +17,7 @@ Using:
 Set DB config parameters in `conf/application.conf` and `flyway.cfg` files.
 
 ## Init a database
-Create a schema and a table with
+Create a schema and a table with:
 ```
 flyway -configFiles=flyway.cfg migrate
 ```
@@ -34,7 +34,7 @@ Run the app with `sbt run`. The app will be available at `http://localhost:9000/
 Check `/v1` API methods using swagger-ui. `/v2` methods won't work correctly until `v2` migration.
 
 ## Migrate the table to the version 2
-Copy `sql2/V2__clients_add_age_column.sql` file to `sql/` directory and run
+Copy `sql2/V2__clients_add_age_column.sql` file to `sql/` directory and run:
 ```
 flyway -configFiles=flyway.cfg migrate
 ```
