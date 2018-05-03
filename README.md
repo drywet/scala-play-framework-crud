@@ -43,8 +43,7 @@ Right away, you'll be able to store and retrieve records with a value specified 
 Note: use integer value for the `age` field, since sbt-play-swagger plugin processes Short type incorrectly.
 
 ## Failed validation response example
-Status: `Bad request`
-
+Status: `Bad request`<br/>
 Payload:
 ```
 {
