@@ -51,7 +51,7 @@ object ClientData {
 
   implicit val validation: Validator[ClientData] =
     validator[ClientData] { x =>
-      x.name has size >= 0
+      x.name is notBlank
       x.name has size <= 100
       x.phone is valid
       x.age.each is between(13.toShort, 150.toShort)

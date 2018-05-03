@@ -19,6 +19,7 @@ object Phone {
 
   implicit val validation: Validator[Phone] =
     validator[Phone] { x =>
+      x.phone is notBlank
       x.phone has size >= 5
       x.phone has size <= 20
     }
