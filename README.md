@@ -31,7 +31,7 @@ This is convenient if multiple instances of the app may be started at the same t
 
 ## Run the app
 Run the app with `sbt run`. The app will be available at `http://localhost:9000/`.
-Check `/v1` API methods using swagger-ui. `/v2` methods won't until `v2` migration.
+Check `/v1` API methods using swagger-ui. `/v2` methods won't work correctly until `v2` migration.
 
 ## Migrate the table to version 2
 Copy `sql2/V2__clients_add_age_column.sql` file to `sql/` directory and run
