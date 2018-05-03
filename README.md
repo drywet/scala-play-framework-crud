@@ -1,5 +1,5 @@
 ## Description
-A simple CRUD controller.
+A simple CRUD REST API.
 Using:
 - Play Framework for HTTP API
 - doobie for DB access
