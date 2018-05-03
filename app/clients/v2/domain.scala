@@ -39,7 +39,7 @@ object ClientData {
   def apply(name: String,
             phone: Phone,
             age: Option[Short]): ClientData = {
-    validated(new ClientData(name, phone, age) {})
+    validated(new ClientData(name.trim, phone, age) {})
   }
 
   def apply(x: ClientDataDto): ClientData =
@@ -51,7 +51,8 @@ object ClientData {
 
   implicit val validation: Validator[ClientData] =
     validator[ClientData] { x =>
-      x.name is notBlank
+      x.name has size >= 0
+      x.name has size <= 100
       x.phone is valid
       x.age.each is between(13.toShort, 150.toShort)
     }
